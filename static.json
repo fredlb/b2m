@@ -1,0 +1,7 @@
+{
+  "proxies": {
+    "/get_trips/": {
+      "origin": "https://damp-hollows-97891.herokuapp.com/"
+    }
+  }
+}
