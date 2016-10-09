@@ -18,7 +18,7 @@ class App extends Component {
       }
     };
 
-    fetch('/get_trips', config)
+      fetch('/api/get_trips', config)
       .then( response => {
         response.json().then( data => {
           const trips = data['Trip'].map( trip => {
