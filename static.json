@@ -1,8 +1,8 @@
 {
   "root": "build/",
   "proxies": {
-    "api/": {
-      "origin": "https://damp-hollows-97891.herokuapp.com/"
+    "/api/": {
+      "origin": "https://damp-hollows-97891.herokuapp.com"
     }
   }
 }
