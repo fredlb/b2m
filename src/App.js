@@ -53,6 +53,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
+      
           <div id="indicatorContainer">
             <div className="blacke indicator active">
               B
