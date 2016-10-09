@@ -1,7 +1,7 @@
 {
   "root": "build/",
   "proxies": {
-    "/get_trips/": {
+    "/api": {
       "origin": "https://damp-hollows-97891.herokuapp.com/"
     }
   }
