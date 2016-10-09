@@ -1,15 +1,89 @@
-body {
-  background-color: #DCDCDC
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.App {
+.app {
+  width: 100%;
+  height: 100%;
+  max-width: 320px;
+  max-height: 568px;
+  background-color: #DCDCDC;
+}
+
+/*body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 640px;
+} */
+
+.app-header {
+  height: 4em;
+  background-color: #535353;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.indicator {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: #DCDCDC;
+  overflow: hidden;
+  text-align: center;
+  line-height: 2em;
+  font-size: 2em;
+}
+
+#direction {
+  width: 7em;
+  background-image: url(images/corgi.png);
+}
+
+#departures {
+  padding: 1em;
+  background-color: #DCDCDC;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nextTrip {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0.3em;
+}
+
+.dot {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #535353;
+  margin: 0.3em;
+}
+
+.trip {
+  font-size: 1.2em;
+  margin: 0.4em;
+}
+
+/*.App {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
 }
-
+ 
 .App-header {
   text-align: center;
   background-color: #535353;
@@ -17,21 +91,6 @@ body {
   padding: 25px;
 }
 
-.trips {
-  margin: auto;
-  padding: 25px;
-}
-
-.nextTrip {
-  margin: auto;
-  padding: 25px;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.picker {
-  position: relative;
-}
 
 .blacke {
   position: absolute;
@@ -42,7 +101,7 @@ body {
   border-radius: 50%;
   font-size: 2.5em;
   background-color: #DCDCDC;
-}
+} 
 
 .active {
 }
@@ -56,7 +115,25 @@ body {
   line-height: 60px;
   border-radius: 50%;
   background-color: #DCDCDC;
+} 
+
+.trips {
+  margin: auto;
+  padding: 25px;
+} */
+
+/*
+.nextTrip {
+  margin: auto;
+  padding: 25px;
+  font-size: 1.5em;
+  font-weight: bold;
 }
+
+.picker {
+  position: relative;
+}
+
 
 .list {
   font-size: 1.5em;
@@ -66,4 +143,4 @@ body {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-
+*/

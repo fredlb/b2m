@@ -35,15 +35,12 @@ class App extends Component {
   render() {
     const tripRender = (
       <div className="trips">
-        <div className="list">
-        { 
-          this.state.trips.filter((trip, idx) => {
+        {this.state.trips.filter((trip, idx) => {
             if (idx === 0) { return false;}
-            return true;
+              return true;
           }).map( (trip, idx) => (
-            <div key={idx} className="trip"> {trip['Origin']['time']} - {trip['Destination']['time']}</div>
+            <div key={idx} className="trip"> {trip['Origin']['time'].substring(0, 5)} - {trip['Destination']['time'].substring(0, 5)}</div>
           ))}
-        </div>
       </div>);
 
     let nextTrip;
@@ -51,22 +48,28 @@ class App extends Component {
       const now = moment();
       const nextTripTime = moment(this.state.trips[0]['Origin']['date'] + ' ' + this.state.trips[0]['Origin']['time']);
       const minutesUntilNextTrip = moment.duration(nextTripTime.diff(now));
-      nextTrip = (<div className="nextTrip">{minutesUntilNextTrip.minutes()}m {this.state.trips[0]['Origin']['time']} - {this.state.trips[0]['Destination']['time']}</div>);
+      nextTrip = (<div className="nextTrip">{minutesUntilNextTrip.minutes()}m {this.state.trips[0]['Origin']['time'].substring(0, 5)} - {this.state.trips[0]['Destination']['time'].substring(0, 5)}</div>);
     }
     return (
-      <div className="App">
-        <div className="App-header">
-          <div className="picker">
-            <span className="blacke active">
-              B
-            </span>
-            <span className="medis">
-              M
-            </span>
+      <div className="app">
+        <div className="app-header">
+      
+          <div className="blacke indicator active">
+            B
           </div>
+          <div id="direction"></div>
+          <div className="medis indicator">
+            M
+          </div>
+
         </div>
-        {nextTrip}
-        {tripRender}
+        <div id="departures">
+          {nextTrip}
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+          {tripRender}
+        </div>
       </div>
     );
   }
