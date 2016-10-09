@@ -9,8 +9,7 @@ app.get('/get_trips', (req, res) => {
         'Accept': 'application/json'
       }
     };
-
-    fetch('https://api.resrobot.se/v2/trip?key=SECRIT_KEY_HERE&originId=740021685&destId=740098556&products=32&format=json', config)
+    fetch(`https://api.resrobot.se/v2/trip?key=${process.env.TRAFIKLAB_APIKEY}&originId=740021685&destId=740098556&products=32&format=json`, config)
       .then( response => {
         response.json().then( data => {
           const trips = data['Trip'].map( trip => {
