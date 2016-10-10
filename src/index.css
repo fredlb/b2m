@@ -3,4 +3,6 @@ body {
   padding: 0;
   height: 100vh;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
 }

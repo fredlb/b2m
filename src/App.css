@@ -1,35 +1,25 @@
 #root {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .app {
   width: 100%;
   height: 100%;
-  max-width: 320px;
-  max-height: 568px;
   background-color: #DCDCDC;
 }
-
-/*body {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.app {
-  width: 100%;
-  max-width: 640px;
-} */
 
 .app-header {
   height: 4em;
   background-color: #535353;
   padding: 1em;
+}
+
+#indicatorContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  max-width: 320px;
+  margin: auto;
 }
 
 .indicator {
@@ -75,72 +65,3 @@
   font-size: 1.2em;
   margin: 0.4em;
 }
-
-/*.App {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: 'Roboto', sans-serif;
-}
- 
-.App-header {
-  text-align: center;
-  background-color: #535353;
-  height: 70px;
-  padding: 25px;
-}
-
-
-.blacke {
-  position: absolute;
-  height: 60px;
-  width: 60px;
-  left: 0;
-  line-height: 60px;
-  border-radius: 50%;
-  font-size: 2.5em;
-  background-color: #DCDCDC;
-} 
-
-.active {
-}
-
-.medis {
-  font-size: 2.5em;
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  right: 0;
-  line-height: 60px;
-  border-radius: 50%;
-  background-color: #DCDCDC;
-} 
-
-.trips {
-  margin: auto;
-  padding: 25px;
-} */
-
-/*
-.nextTrip {
-  margin: auto;
-  padding: 25px;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.picker {
-  position: relative;
-}
-
-
-.list {
-  font-size: 1.5em;
-}
-.trip {
-  color: #606060;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-*/

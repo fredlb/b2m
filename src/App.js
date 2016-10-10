@@ -54,12 +54,14 @@ class App extends Component {
       <div className="app">
         <div className="app-header">
       
-          <div className="blacke indicator active">
-            B
-          </div>
-          <div id="direction"></div>
-          <div className="medis indicator">
-            M
+          <div id="indicatorContainer">
+            <div className="blacke indicator active">
+              B
+            </div>
+            <div id="direction"></div>
+            <div className="medis indicator">
+              M
+            </div>
           </div>
 
         </div>
