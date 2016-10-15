@@ -6,11 +6,16 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { trips: [] };
+    this.state = {
+      trips: [],
+      originId: 740021685,
+      destinationId: 740098556,
+    };
   }
 
   componentDidMount() {
     //this.setState({trips: testData});
+    const url = `/api/get_trips?originId=${this.state.originId}&destinationId=${this.state.destinationId}`
     const config = {
       method: 'get',
       headers: {
@@ -18,7 +23,7 @@ class App extends Component {
       }
     };
 
-      fetch('/api/get_trips', config)
+      fetch(url, config)
       .then( response => {
         response.json().then( data => {
           const trips = data['Trip'].map( trip => {
