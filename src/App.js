@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-//import testData from './testData.js';
 import './App.css';
 
 class App extends Component {
@@ -8,12 +7,15 @@ class App extends Component {
     super(props);
     this.state = {
       trips: [],
+      origin: 'blacke',
       originId: 740021685,
       destinationId: 740098556,
       loading: true
     };
 
     this.fetchData = this.fetchData.bind(this);
+    this.blacke = this.blacke.bind(this);
+    this.medis = this.medis.bind(this);
   }
 
   fetchData() {
@@ -49,14 +51,28 @@ class App extends Component {
   }
 
   blacke() {
-    this.setState = {
+    this.setState({
       trips: [],
+      origin: 'blacke',
       originId: 740021685,
       destinationId: 740098556,
       loading: true
-    };
+    });
     this.fetchData();
   }
+
+  medis() {
+    this.setState({
+      trips: [],
+      origin: 'medis',
+      originId: 740098556,
+      destinationId: 740021685,
+      loading: true
+    });
+    this.fetchData();
+  }
+
+
   render() {
     let isLoading;
     if (this.state.loading) {
@@ -82,20 +98,19 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-      
           <div id="indicatorContainer">
-            <div onClick={this.blacke} className="blacke indicator active">
+            <div onClick={this.blacke} className={`blacke indicator ${this.state.origin === 'blacke' ? 'active' : ''}`}>
               B
             </div>
             <div id="direction"></div>
-            <div className="medis indicator">
+            <div onClick={this.medis} className={`medis indicator ${this.state.origin === 'medis' ? 'active' : ''}`}>
               M
             </div>
           </div>
 
         </div>
-        {isLoading}
         <div id="departures">
+          {isLoading}
           {nextTrip}
           <div className="dot"></div>
           <div className="dot"></div>
