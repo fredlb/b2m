@@ -10,11 +10,13 @@ class App extends Component {
       trips: [],
       originId: 740021685,
       destinationId: 740098556,
+      loading: true
     };
+
+    this.fetchData = this.fetchData.bind(this);
   }
 
-  componentDidMount() {
-    //this.setState({trips: testData});
+  fetchData() {
     const url = `/api/get_trips?originId=${this.state.originId}&destinationId=${this.state.destinationId}`
     const config = {
       method: 'get',
@@ -23,21 +25,43 @@ class App extends Component {
       }
     };
 
-      fetch(url, config)
+    this.setState({loading: true});
+
+    fetch(url, config)
       .then( response => {
         response.json().then( data => {
           const trips = data['Trip'].map( trip => {
             return trip['LegList']['Leg'][0];
           });
-          this.setState({ trips: trips });
+          this.setState({
+            trips: trips,
+            loading: false,
+          });
         });
       })
       .catch(err => {
         console.log(err);
-    });
-}
-       
+      });
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  blacke() {
+    this.setState = {
+      trips: [],
+      originId: 740021685,
+      destinationId: 740098556,
+      loading: true
+    };
+    this.fetchData();
+  }
   render() {
+    let isLoading;
+    if (this.state.loading) {
+      isLoading = (<div>Loading...</div>);
+    }
     const tripRender = (
       <div className="trips">
         {this.state.trips.filter((trip, idx) => {
@@ -60,7 +84,7 @@ class App extends Component {
         <div className="app-header">
       
           <div id="indicatorContainer">
-            <div className="blacke indicator active">
+            <div onClick={this.blacke} className="blacke indicator active">
               B
             </div>
             <div id="direction"></div>
@@ -70,6 +94,7 @@ class App extends Component {
           </div>
 
         </div>
+        {isLoading}
         <div id="departures">
           {nextTrip}
           <div className="dot"></div>
